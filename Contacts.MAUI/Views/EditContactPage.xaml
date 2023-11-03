@@ -17,30 +17,32 @@
         <Frame Padding="10,5,10,5">
             <HorizontalStackLayout>
                 <Label Text="Name:" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry VerticalOptions="Center"></Entry>
+                <Entry x:Name="entryName" VerticalOptions="Center"></Entry>
             </HorizontalStackLayout>
         </Frame>
 
         <Frame Padding="10,5,10,5">
             <HorizontalStackLayout>
                 <Label Text="Phone:" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry VerticalOptions="Center"></Entry>
+                <Entry x:Name="entryPhone" VerticalOptions="Center"></Entry>
             </HorizontalStackLayout>
         </Frame>
 
         <Frame Padding="10,5,10,5">
             <HorizontalStackLayout>
                 <Label Text="Email:" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry VerticalOptions="Center"></Entry>
+                <Entry x:Name="entryEmail" VerticalOptions="Center"></Entry>
             </HorizontalStackLayout>
         </Frame>
 
         <Frame Padding="10,5,10,5">
             <HorizontalStackLayout>
                 <Label Text="Address:" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry VerticalOptions="Center"></Entry>
+                <Entry x:Name="entryAddress" VerticalOptions="Center"></Entry>
             </HorizontalStackLayout>
         </Frame>
+
+        <Button x:Name="btnUpdate" Clicked="btnUpdate_Clicked"  Text="Update" Margin="60,10,60,0"></Button>
 
         <Button x:Name="btnCancel" Clicked="btnCancel_Clicked" Text="Cancel" Margin="60,10,60,0"></Button>
 
