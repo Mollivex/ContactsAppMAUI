@@ -2,85 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:controls="clr-namespace:Contacts.MAUI.Views.Controls"
              x:Class="Contacts.MAUI.Views.EditContactPage"
              Title="Edit Contact">
-    
-    <!--<VerticalStackLayout>
-        <Label 
-            x:Name="lblName"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>-->
 
-    <VerticalStackLayout Spacing="10" Margin="20, 30, 20, 0">
-
-        <Frame Padding="10,5,10,5">
-            <HorizontalStackLayout>
-                <Label Text="Name:" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry x:Name="entryName" VerticalOptions="Center">
-                    <Entry.Behaviors>
-                        <toolkit:TextValidationBehavior
-                            x:Name="nameValidator"
-                            Flags="ValidateOnAttaching,
-                                   ValidateOnValueChanged"  
-                            MinimumLength="1"/>
-                    </Entry.Behaviors>
-                </Entry>
-            </HorizontalStackLayout>
-        </Frame>
-
-        <Frame Padding="10,5,10,5">
-            <HorizontalStackLayout>
-                <Label Text="Phone:" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry x:Name="entryPhone" VerticalOptions="Center">
-                    <Entry.Behaviors>
-                        <toolkit:TextValidationBehavior
-                            x:Name="phoneValidator"
-                            Flags="ValidateOnAttaching,
-                                   ValidateOnValueChanged"
-                            MinimumLength="1"/>
-                    </Entry.Behaviors>
-                </Entry>
-            </HorizontalStackLayout>
-        </Frame>
-
-        <Frame Padding="10,5,10,5">
-            <HorizontalStackLayout>
-                <Label Text="Email:" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry x:Name="entryEmail" VerticalOptions="Center">
-                    <Entry.Behaviors>
-                        <toolkit:MultiValidationBehavior
-                            x:Name="emailValidator"
-                            Flags="ValidateOnAttaching,
-                                   ValidateOnValueChanged">
-                            
-                            <toolkit:TextValidationBehavior
-                                Flags="ValidateOnAttaching,
-                                       ValidateOnValueChanged"
-                                MinimumLength="1"
-                                toolkit:MultiValidationBehavior.Error="Email is required."/>
-                            
-                            <toolkit:EmailValidationBehavior
-                                Flags="ValidateOnAttaching,
-                                       ValidateOnValueChanged"
-                                toolkit:MultiValidationBehavior.Error="Email format is invalid."/>
-                        </toolkit:MultiValidationBehavior>
-                    </Entry.Behaviors>
-                </Entry>
-            </HorizontalStackLayout>
-        </Frame>
-
-        <Frame Padding="10,5,10,5">
-            <HorizontalStackLayout>
-                <Label Text="Address:" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry x:Name="entryAddress" VerticalOptions="Center"></Entry>
-            </HorizontalStackLayout>
-        </Frame>
-
-        <Button x:Name="btnUpdate" Clicked="btnUpdate_Clicked"  Text="Update" Margin="60,10,60,0"></Button>
-
-        <Button x:Name="btnCancel" Clicked="btnCancel_Clicked" Text="Cancel" Margin="60,10,60,0"></Button>
-
-    </VerticalStackLayout>
+    <controls:ContactControl x:Name="contactCtrl"
+                             OnSave="btnUpdate_Clicked"
+                             OnCancel="btnCancel_Clicked"
+                             OnError="contactCtrl_OnError">
+    </controls:ContactControl>
 </ContentPage>
